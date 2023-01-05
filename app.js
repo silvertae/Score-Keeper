@@ -30,6 +30,9 @@ function updateScores(player, opponent) {
 			opponent.display.classList.add('has-text-danger');
 			player.button.disabled = true;
 			opponent.button.disabled = true;
+			startConfetti();
+			// 4초만 내리고 멈추게 설정
+			setTimeout(stopConfetti, 4000);
 		}
 		player.display.textContent = player.score;
 	}
@@ -60,6 +63,7 @@ function reset() {
 		p.display.textContent = 0;
 		p.display.classList.remove('has-text-success', 'has-text-danger');
 		p.button.disabled = false;
+		stopConfetti();
 	}
 	// p1.score = 0;
 	// p2.score = 0;
