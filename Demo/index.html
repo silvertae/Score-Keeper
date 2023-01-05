@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>PingPong ScoreKeeper</title>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css"
+			integrity="sha512-NmLkDIU1C/C88wi324HBc+S2kLhi08PN5GDeUVVVC/BVt/9Izdsc9SVeVfA1UZbY3sHUlDSyRXhCzHfr6hmPPw=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer" />
+		<link rel="stylesheet" href="./style.css" />
+	</head>
+	<body>
+		<section id="container">
+			<img src="./pingpong.jpeg" alt="pingpong" />
+			<h3>Ping Pong Score Keeper</h3>
+
+			<div id="liveScore">
+				<h1><span id="p1">0</span> to <span id="p2">0</span></h1>
+				<p>Use the buttons below to keep score</p>
+				<div id="scoreSelect">
+					<span>Playing to </span
+					><select name="endScore" id="endScore">
+						<option value="5">5</option>
+						<option value="6">6</option>
+						<option value="7">7</option>
+						<option value="8">8</option>
+						<option value="9">9</option>
+						<option value="10">10</option>
+					</select>
+				</div>
+			</div>
+
+			<div id="buttons">
+				<button class="btn" id="btn1">+1 Player One</button>
+				<button class="btn" id="btn2">+1 Player Two</button>
+				<button class="btn" id="btn3">Reset</button>
+			</div>
+		</section>
+		<script src="./app.js"></script>
+	</body>
+</html>
