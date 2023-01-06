@@ -15,6 +15,7 @@ const p2 = {
 // const p2Display = document.querySelector('#p2Display');
 const resetBtn = document.querySelector('#reset');
 const winningScoreSelect = document.querySelector('#playto');
+const imgs = document.querySelectorAll('img');
 // let p1Score = 0;
 // let p2Score = 0;
 let winningScore = 3;
@@ -33,6 +34,9 @@ function updateScores(player, opponent) {
 			startConfetti();
 			// 4초만 내리고 멈추게 설정
 			setTimeout(stopConfetti, 4000);
+			for (let img of imgs) {
+				img.classList.toggle('hidden');
+			}
 		}
 		player.display.textContent = player.score;
 	}
@@ -64,6 +68,9 @@ function reset() {
 		p.display.classList.remove('has-text-success', 'has-text-danger');
 		p.button.disabled = false;
 		stopConfetti();
+	}
+	for (let img of imgs) {
+		img.classList.toggle('hidden');
 	}
 	// p1.score = 0;
 	// p2.score = 0;

@@ -11,6 +11,13 @@
 			.has-text-danger {
 				transition: 0.5s;
 			}
+			.hidden {
+				opacity: 0;
+			}
+			img {
+				opacity: 1;
+				transition: opacity 0.5s linear;
+			}
 		</style>
 	</head>
 	<body>
@@ -21,7 +28,8 @@
 						<div class="card">
 							<div class="card-image">
 								<figure class="image is-2by1">
-									<img src="./pingpong.jpeg" alt="pingpong" />
+									<img src="./images/pingpong.jpeg" alt="pingpong" />
+									<img class="hidden" src="./images/trophy.jpeg" alt="pingpong" />
 								</figure>
 							</div>
 							<header class="card-header">
