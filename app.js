@@ -34,9 +34,7 @@ function updateScores(player, opponent) {
 			startConfetti();
 			// 4초만 내리고 멈추게 설정
 			setTimeout(stopConfetti, 4000);
-			for (let img of imgs) {
-				img.classList.toggle('hidden');
-			}
+			changeImg();
 		}
 		player.display.textContent = player.score;
 	}
@@ -56,7 +54,11 @@ winningScoreSelect.addEventListener('change', function () {
 	reset();
 });
 
-resetBtn.addEventListener('click', reset);
+resetBtn.addEventListener('click', () => {
+	// changeImg가 앞에 있어야 GameOver인 상태로 제대로 이미지가 바뀜!
+	changeImg();
+	reset();
+});
 
 // 길어진 코드는 재사용을 위해 함수로 빼주기
 function reset() {
@@ -69,9 +71,6 @@ function reset() {
 		p.button.disabled = false;
 		stopConfetti();
 	}
-	for (let img of imgs) {
-		img.classList.toggle('hidden');
-	}
 	// p1.score = 0;
 	// p2.score = 0;
 	// p1.display.textContent = 0;
@@ -80,4 +79,12 @@ function reset() {
 	// p2.display.classList.remove('has-text-success', 'has-text-danger');
 	// p1.button.disabled = false;
 	// p2.button.disabled = false;
+}
+// 게임오버 됐을때만 이미지가 바뀌게 만들어준다.
+function changeImg() {
+	if (isGameOver) {
+		for (let img of imgs) {
+			img.classList.toggle('hidden');
+		}
+	}
 }
